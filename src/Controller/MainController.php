@@ -10,17 +10,15 @@ class MainController extends AbstractController
 {
 
     #[Route('/', name: 'app_home', methods: ['GET','POST'])]
-    public function home(): void
+    public function home(): \Symfony\Component\HttpFoundation\Response
     {
-        echo "coucou";
-        die();
+        return $this->render('main/home.html.twig');
     }
 
     #[Route('/test', name: 'app_test', methods: ['GET','POST'])]
-    public function test(): void
+    public function test(): \Symfony\Component\HttpFoundation\Response
     {
-        echo "test";
-        die();
+        return $this->render('main/test.html.twig');
     }
 
 }

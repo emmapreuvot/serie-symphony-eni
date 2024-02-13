@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Test</h1>
+
+<div>
+    {# ceci est un commentaire #}
+
+    {% set name='Emma' %}
+
+    {{ name|length }}
+
+    <br>
+
+    {{ "now"|date('Y') }}
+    {{ "+10 years"|date('Y') }}
+
+    <br>
+
+
+    {% set tableau = ['hey','hello','salut'] %}
+
+
+    {{ tableau|length }}
+
+    <br>
+
+    {{ tableau|join(' - ') }}
+
+    {% for color in tableau %}
+        {{ loop.index }}
+        {{ color }}
+        <br>
+    {% endfor %}
+
+
+    <br>
+
+    {% set book =
+        {title:'Titre du livre',
+        'auteur':'Auteur1',
+        parution:2023}
+    %}
+
+    <h3> {{ book.title }}</h3>
+
+    {% for key , value in book %}
+        <div>{{ key }} : {{ value }}</div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+
+{% block title %}
+    {{parent()}} | Test
+{% endblock %}
