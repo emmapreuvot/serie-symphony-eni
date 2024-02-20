@@ -1,0 +1,157 @@
+body{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    margin:0;
+    padding:0;
+    min-height:100vh;
+}
+
+
+.fontperso{
+    font-family: "Concert One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+#websitetitle{padding:0;
+    margin : 0 50% 0 10%;
+}
+
+#websitetitle a{
+    display: flex;
+    text-decoration: none;
+
+
+}
+
+nav{
+    display: flex;
+    margin : 0 50% 0 10%;
+    position: relative;
+    left: -2%;
+
+}
+
+nav>ul{    display: flex;
+    flex-direction: row;
+
+}
+
+nav>ul>li {
+    list-style: none;
+    margin-right: 8%;
+    margin-left: 8%;
+
+
+
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+    color: black;
+
+
+
+
+
+}
+
+#websitetitle a>img{
+    padding-left: 10px;
+    height:10%;
+}
+
+#websitetitle a>h1{
+    padding-left: 5px;
+    height:10%;
+    color: black;
+
+
+}
+
+
+
+header {background-color: #c172d5cb;
+margin:0;
+padding: 1%;}
+
+footer {background-color: #af9bf1;
+    position: sticky;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    height:20px;
+    top: 100vh;
+    width:auto;
+    margin:0;
+}
+
+footer div {text-align: center;
+    }
+
+
+.aboutus{display: flex;
+flex-direction: row-reverse;
+    flex-wrap: wrap;
+    padding : 2% 10% 5% 10%;
+}
+
+.aboutus_text{width:70%; height:30%;padding: 2%;}
+.aboutus_pic{padding:2%;}
+.aboutus_pic img{width: 60%;}
+
+.series-list{
+    display: grid;
+    grid-template-columns: repeat(5,minmax(100px, 1fr));
+    grid-column-gap: 10px;
+
+    margin:0 auto;
+    padding:10px;
+    max-width: 90%;
+}
+
+.series-list img {height: 80%}
+
+label {display: block;}
+
+input, textarea, select {margin-bottom: 1rem;
+box-sizing: border-box;
+width:30%;}
+
+.flash{
+    padding:20px;
+    font-weight: bold;
+    margin:1rem 0;
+    border-radius: 5px;
+}
+
+.flash-success{background-color: #5B21B6}
+
+.details-full{
+    margin-top:20px;
+    display: flex;
+flex-direction: row;
+justify-content: space-around}
+
+
+
+.details-gauche{padding:20px}
+.details-droite{
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.details-droite section{
+    margin-top: 10px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.details-droite section>article img{
+  width:40%;
+}

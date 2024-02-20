@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+About Us | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="aboutus">
+    {% for personne in aboutus %}
+        <div class="aboutus_text">
+
+            <div class="aboutus_name">
+                {{ personne.firstname }}
+                {{ personne.lastname }}
+                {% if personne.firstname=='Fabien' %} ❤ {% endif %}
+            </div>
+            <div class="aboutus_birth">
+               Né le {{ personne.dateOfBirth | date('d-m-Y') }}
+            </div>
+            <div class="aboutus_creator">
+                Créateur de {{ personne.creatorOf }}
+            </div>
+            <div class="aboutus_description">
+                {{ personne.description }}
+            </div>
+
+        </div>
+
+        <div class="aboutus_pic">
+            <img src="{{ personne.picture }}" alt="picture_of_{{ personne.lastname  }}">
+
+        </div>
+
+        <div class="aboutus_divider"></div>
+
+    {% endfor %}</div>
+
+{% endblock %}
+

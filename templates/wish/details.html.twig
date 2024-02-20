@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Détail du voeu | Bucket List
+{% endblock %}
+
+{% block body %}
+<h2>{{ wish.title }}</h2>
+<div>{{ wish.description }}</div>
+<div>{{ wish.author }}</div>
+<div>{{ wish.dateCreated | date }}</div>
+{% endblock %}

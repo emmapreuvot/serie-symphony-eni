@@ -5,19 +5,51 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=yes, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" href={{ asset('img/favicon.png') }}>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('css/normalize.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/app.css')}}">
     <title>{% block title %}Series !{% endblock %}</title>
+
+    {# pour rajouter des styles css différents pour chaque fichier twig #}
+    {% block extrastyles %}{% endblock %}
+
+
 </head>
-<body>
+<body class="fontperso">
     <header>
-        <h1>Series!</h1>
+        <div id="websitetitle"><a href="{{ path('app_home') }}">
+                <img src="{{ asset('img/logo.png') }}" alt="logo bucket">
+                <h1>Bucket-List</h1>
+        </a></div>
+
 {% include 'inc/nav.html.twig' %}
     </header>
+
     <main>
+
+       {# voir la doc symphony sur flash #}
+
+
+        {# read and display all flash messages #}
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="flash flash-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+
     {% block body %}{% endblock %}
     </main>
     <footer>
-        {% include 'inc/nav.html.twig' %}
-        <div>&copy; {{  "now"|date("Y") }}</div>
+        <div>&copy; Bucket List {{  "now"|date("Y") }}</div>
     </footer>
 </body>
 </html>

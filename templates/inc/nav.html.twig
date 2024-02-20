@@ -1,7 +1,10 @@
 <nav>
     <ul>
-        <li><a href="#" title="Home">Home</a></li>
-        <li><a href="#" title="Test">Test</a></li>
-
+        <li><a href="{{ path('app_home') }}" title="Home">Home</a></li>
+        <li><a href="{{ path('app_serie_list_list') }}" title="Series">Series</a></li>
+        <li><a href="{{ path('app_serie_list_create') }}" title="Create">Create Serie</a></li>
+        <li><a href="{{ path('app_season_create') }}" title="Create">Create Season</a></li>
+        <li><a href="{{ path('app_about_us') }}" title="About Us">About Us</a></li>
+        <li><a href="{{ path('app_wishapp_wish_list') }}" title="Wishlist">Wishlist</a></li>
     </ul>
 </nav>

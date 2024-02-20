@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ serie.name }} | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+<div class="details-full">
+
+    <div class="details-gauche"><img src="{{ asset('img/posters/series/'~ serie.poster) }}" alt="poster de la série"></div>
+    <div  class="details-droite">
+        <h2 >{{ serie.name }}</h2>
+        <div>Genre : {{ serie.genres }}</div>
+        <div>{{ serie.overview }}</div>
+        <div>First aired : {{ serie.firstAirDate | date('Y') }}</div>
+        <div>Last aired : {{ serie.lastAirDate | date('Y') }}</div>
+        <div>Status : {{ serie.status }}</div>
+
+        <h3>Seasons</h3>
+        <section class="seasons">
+
+            {% for season in serie.seasons %}
+                <article>
+                    <img src="{{ asset('img/posters/seasons/'~ season.poster) }}" alt="{{ serie.name }} season {{ season.number }}">
+                    <h4> Season {{ season.number }}</h4>
+                </article>
+
+            {% endfor %}
+        </section>
+    </div>
+
+
+</div>
+
+
+
+{% endblock %}
+
+{%  block extrastyles %}
+    <style>
+        body{
+            background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.7)),url("{{ asset('img/backdrops/'~ serie.backdrop) }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        main{color:white}
+    </style>
+{% endblock %}
