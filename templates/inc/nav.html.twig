@@ -2,9 +2,22 @@
     <ul>
         <li><a href="{{ path('app_home') }}" title="Home">Home</a></li>
         <li><a href="{{ path('app_serie_list_list') }}" title="Series">Series</a></li>
-        <li><a href="{{ path('app_serie_list_create') }}" title="Create">Create Serie</a></li>
-        <li><a href="{{ path('app_season_create') }}" title="Create">Create Season</a></li>
+
+        {% if app.user %}
+        <li><a href="{{ path('app_serie_list_create') }}" title="Create a new serie">Create Serie</a></li>
+        <li><a href="{{ path('app_season_create') }}" title="Create a new season">Create Season</a></li>
+            <li><a href="{{ path('app_logout') }}" title="Log out">Log out as {{ app.user.firstname }}</a></li>
+        {% else %}
+            <li><a href="{{ path('app_login') }}" title="Log in">Log in</a></li>
+            <li><a href="{{ path('app_register') }}" title="Create a new account">Register</a></li>
+        {% endif %}
+
         <li><a href="{{ path('app_about_us') }}" title="About Us">About Us</a></li>
         <li><a href="{{ path('app_wishapp_wish_list') }}" title="Wishlist">Wishlist</a></li>
+
+        {% if is_granted("ROLE_ADMIN") %}
+            <li><a href="{{ path('app_admin_dashboard') }}" title="Admin Dashboard">Admin Dashboard</a></li>
+        {% endif %}
+
     </ul>
 </nav>

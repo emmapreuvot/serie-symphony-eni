@@ -103,15 +103,15 @@ flex-direction: row-reverse;
 
 .series-list{
     display: grid;
-    grid-template-columns: repeat(5,minmax(100px, 1fr));
-    grid-column-gap: 10px;
-
-    margin:0 auto;
-    padding:10px;
+    grid-template-columns: repeat(4,minmax(250px,500px));
+    margin: 0 auto;
+    padding: 10px;
     max-width: 90%;
 }
 
-.series-list img {height: 80%}
+.series-list img {
+    min-width:10vw;
+    width:250px; height:auto}
 
 label {display: block;}
 
